@@ -1,0 +1,1331 @@
+apiVersion: v1
+entries:
+  common:
+  - annotations:
+      category: Infrastructure
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 2.14.1
+    created: "2025-09-18T17:37:03.826376107+05:30"
+    description: A Library Helm Chart for grouping common logic between bitnami charts.
+      This chart is not deployable by itself.
+    digest: a40d83bb48d1f6102c7c91bf095b120c39661e1dbc6ecf7ad4eaa8a754e5cebf
+    home: https://bitnami.com
+    icon: https://bitnami.com/downloads/logos/bitnami-mark.png
+    keywords:
+    - common
+    - helper
+    - template
+    - function
+    - bitnami
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: common
+    sources:
+    - https://github.com/bitnami/charts
+    type: library
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/common-2.14.1.tgz
+    version: 2.14.1
+  mongodb:
+  - annotations:
+      category: Database
+      images: |
+        - name: kubectl
+          image: docker.io/bitnamilegacy/kubectl:1.29.1-debian-11-r3
+        - name: mongodb-exporter
+          image: docker.io/bitnamilegacy/mongodb-exporter:0.40.0-debian-11-r6
+        - name: mongodb
+          image: docker.io/bitnamilegacy/mongodb:7.0.5-debian-11-r6
+        - name: nginx
+          image: docker.io/bitnamilegacy/nginx:1.25.3-debian-11-r7
+        - name: os-shell
+          image: docker.io/bitnamilegacy/os-shell:11-debian-11-r96
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 7.0.5
+    created: "2025-09-18T17:18:36.879686785+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MongoDB(R) is a relational open source NoSQL database. Easy to use,
+      it stores data in JSON-like documents. Automated scalability and high-performance.
+      Ideal for developing cloud native applications.
+    digest: e8d781f637ca4e873c34fc812809ddf041c698ed7f49f0c7de2d4d75a84d69b5
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
+    keywords:
+    - mongodb
+    - database
+    - nosql
+    - cluster
+    - replicaset
+    - replication
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: mongodb
+    sources:
+    - https://atmosly-builder.github.io/atmosly-mongo-helm-chart/mongodb-14.10.0.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/mongodb-14.10.8.tgz
+    version: 14.10.8
+  - annotations:
+      category: Database
+      images: |
+        - name: kubectl
+          image: docker.io/bitnami/kubectl:1.29.1-debian-11-r3
+        - name: mongodb-exporter
+          image: docker.io/bitnami/mongodb-exporter:0.40.0-debian-11-r6
+        - name: mongodb
+          image: docker.io/bitnami/mongodb:7.0.5-debian-11-r6
+        - name: nginx
+          image: docker.io/bitnami/nginx:1.25.3-debian-11-r7
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r96
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 7.0.5
+    created: "2025-09-18T17:18:36.865805483+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MongoDB(R) is a relational open source NoSQL database. Easy to use,
+      it stores data in JSON-like documents. Automated scalability and high-performance.
+      Ideal for developing cloud native applications.
+    digest: be664caea988e77ef5a1531217da31fbec15fb24f201224d8bf24a20b7db733c
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
+    keywords:
+    - mongodb
+    - database
+    - nosql
+    - cluster
+    - replicaset
+    - replication
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: mongodb
+    sources:
+    - https://atmosly-builder.github.io/atmosly-mongo-helm-chart/mongodb-14.10.0.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/mongodb-14.10.7.tgz
+    version: 14.10.7
+  - annotations:
+      category: Database
+      images: |
+        - name: kubectl
+          image: docker.io/bitnami/kubectl:1.29.1-debian-11-r3
+        - name: mongodb-exporter
+          image: docker.io/bitnami/mongodb-exporter:0.40.0-debian-11-r6
+        - name: mongodb
+          image: docker.io/bitnami/mongodb:7.0.5-debian-11-r6
+        - name: nginx
+          image: docker.io/bitnami/nginx:1.25.3-debian-11-r7
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r96
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 7.0.5
+    created: "2025-09-18T17:18:36.853368622+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MongoDB(R) is a relational open source NoSQL database. Easy to use,
+      it stores data in JSON-like documents. Automated scalability and high-performance.
+      Ideal for developing cloud native applications.
+    digest: 02539f2d452afa0d9ed867b38042b9463958974decaf7439e52ed6d9c4f4b6a7
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
+    keywords:
+    - mongodb
+    - database
+    - nosql
+    - cluster
+    - replicaset
+    - replication
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: mongodb
+    sources:
+    - https://atmosly-builder.github.io/atmosly-mongo-helm-chart/mongodb-14.10.0.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/mongodb-14.10.6.tgz
+    version: 14.10.6
+  - annotations:
+      category: Database
+      images: |
+        - name: kubectl
+          image: docker.io/bitnami/kubectl:1.29.1-debian-11-r3
+        - name: mongodb-exporter
+          image: docker.io/bitnami/mongodb-exporter:0.40.0-debian-11-r6
+        - name: mongodb
+          image: docker.io/bitnami/mongodb:7.0.5-debian-11-r6
+        - name: nginx
+          image: docker.io/bitnami/nginx:1.25.3-debian-11-r7
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r96
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 7.0.5
+    created: "2025-09-18T17:18:36.839650943+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MongoDB(R) is a relational open source NoSQL database. Easy to use,
+      it stores data in JSON-like documents. Automated scalability and high-performance.
+      Ideal for developing cloud native applications.
+    digest: 2fae79475c328d38a4c17b26ecc4d315e234e679b09eb674880c33d4957d1e9f
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
+    keywords:
+    - mongodb
+    - database
+    - nosql
+    - cluster
+    - replicaset
+    - replication
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: mongodb
+    sources:
+    - https://atmosly-builder.github.io/atmosly-mongo-helm-chart/mongodb-14.10.0.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/mongodb-14.10.5.tgz
+    version: 14.10.5
+  - annotations:
+      category: Database
+      images: |
+        - name: kubectl
+          image: docker.io/bitnami/kubectl:1.29.1-debian-11-r3
+        - name: mongodb-exporter
+          image: docker.io/bitnami/mongodb-exporter:0.40.0-debian-11-r6
+        - name: mongodb
+          image: docker.io/bitnami/mongodb:7.0.5-debian-11-r6
+        - name: nginx
+          image: docker.io/bitnami/nginx:1.25.3-debian-11-r7
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r96
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 7.0.5
+    created: "2025-09-18T17:18:36.825095979+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MongoDB(R) is a relational open source NoSQL database. Easy to use,
+      it stores data in JSON-like documents. Automated scalability and high-performance.
+      Ideal for developing cloud native applications.
+    digest: 67e3be8a3419faf261d3e105e9716e3a4d625a440c4cbb9b13d98e5555ca0663
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
+    keywords:
+    - mongodb
+    - database
+    - nosql
+    - cluster
+    - replicaset
+    - replication
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: mongodb
+    sources:
+    - https://atmosly-builder.github.io/atmosly-mongo-helm-chart/mongodb-14.10.0.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/mongodb-14.10.4.tgz
+    version: 14.10.4
+  - annotations:
+      category: Database
+      images: |
+        - name: kubectl
+          image: docker.io/bitnami/kubectl:1.29.1-debian-11-r3
+        - name: mongodb-exporter
+          image: docker.io/bitnami/mongodb-exporter:0.40.0-debian-11-r6
+        - name: mongodb
+          image: docker.io/bitnami/mongodb:7.0.5-debian-11-r6
+        - name: nginx
+          image: docker.io/bitnami/nginx:1.25.3-debian-11-r7
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r96
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 7.0.5
+    created: "2025-09-18T17:18:36.81002573+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MongoDB(R) is a relational open source NoSQL database. Easy to use,
+      it stores data in JSON-like documents. Automated scalability and high-performance.
+      Ideal for developing cloud native applications.
+    digest: 3f67530a52b24891480fd6bfaefb3ff15d25653a707aed11266881d93319bc2a
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
+    keywords:
+    - mongodb
+    - database
+    - nosql
+    - cluster
+    - replicaset
+    - replication
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: mongodb
+    sources:
+    - https://atmosly-builder.github.io/atmosly-mongo-helm-chart/mongodb-14.10.0.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/mongodb-14.10.3.tgz
+    version: 14.10.3
+  - annotations:
+      category: Database
+      images: |
+        - name: kubectl
+          image: docker.io/bitnami/kubectl:1.29.1-debian-11-r3
+        - name: mongodb-exporter
+          image: docker.io/bitnami/mongodb-exporter:0.40.0-debian-11-r6
+        - name: mongodb
+          image: docker.io/bitnami/mongodb:7.0.5-debian-11-r6
+        - name: nginx
+          image: docker.io/bitnami/nginx:1.25.3-debian-11-r7
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r96
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 7.0.5
+    created: "2025-09-18T17:18:36.799168881+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MongoDB(R) is a relational open source NoSQL database. Easy to use,
+      it stores data in JSON-like documents. Automated scalability and high-performance.
+      Ideal for developing cloud native applications.
+    digest: aae79f81b0c9142d0d69349d04ddd45e941e2aaaf1d475196603ac8e77a35bf7
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
+    keywords:
+    - mongodb
+    - database
+    - nosql
+    - cluster
+    - replicaset
+    - replication
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: mongodb
+    sources:
+    - https://atmosly-builder.github.io/atmosly-mongo-helm-chart/mongodb-14.10.0.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/mongodb-14.10.2.tgz
+    version: 14.10.2
+  - annotations:
+      category: Database
+      images: |
+        - name: kubectl
+          image: docker.io/bitnami/kubectl:1.29.1-debian-11-r3
+        - name: mongodb-exporter
+          image: docker.io/bitnami/mongodb-exporter:0.40.0-debian-11-r6
+        - name: mongodb
+          image: docker.io/bitnami/mongodb:7.0.5-debian-11-r6
+        - name: nginx
+          image: docker.io/bitnami/nginx:1.25.3-debian-11-r7
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r96
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 7.0.5
+    created: "2025-09-18T17:18:36.651166198+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MongoDB(R) is a relational open source NoSQL database. Easy to use,
+      it stores data in JSON-like documents. Automated scalability and high-performance.
+      Ideal for developing cloud native applications.
+    digest: 255f088b4cb021ac7bff7c28b8346fc039a9f9ef7974a6442f1a22a68ca64d48
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
+    keywords:
+    - mongodb
+    - database
+    - nosql
+    - cluster
+    - replicaset
+    - replication
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: mongodb
+    sources:
+    - https://atmosly-builder.github.io/atmosly-mongo-helm-chart/mongodb-14.10.0.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/mongodb-14.10.1.tgz
+    version: 14.10.1
+  - annotations:
+      category: Database
+      images: |
+        - name: kubectl
+          image: docker.io/bitnami/kubectl:1.29.1-debian-11-r3
+        - name: mongodb-exporter
+          image: docker.io/bitnami/mongodb-exporter:0.40.0-debian-11-r6
+        - name: mongodb
+          image: docker.io/bitnami/mongodb:7.0.5-debian-11-r6
+        - name: nginx
+          image: docker.io/bitnami/nginx:1.25.3-debian-11-r7
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r96
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 7.0.5
+    created: "2025-09-18T17:18:36.618456457+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MongoDB(R) is a relational open source NoSQL database. Easy to use,
+      it stores data in JSON-like documents. Automated scalability and high-performance.
+      Ideal for developing cloud native applications.
+    digest: 303033ee4f2e13b079ad5746d09481384d78282fa38686a044caab80efff4e0d
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
+    keywords:
+    - mongodb
+    - database
+    - nosql
+    - cluster
+    - replicaset
+    - replication
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: mongodb
+    sources:
+    - https://github.com/bitnami/charts/tree/main/bitnami/mongodb
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/mongodb-14.10.0.tgz
+    version: 14.10.0
+  mysql:
+  - annotations:
+      category: Database
+      images: |
+        - name: mysql
+          image: docker.io/bitnamilegacy/mysql:8.0.35-debian-11-r0
+        - name: mysqld-exporter
+          image: docker.io/bitnamilegacy/mysqld-exporter:0.15.0-debian-11-r71
+        - name: os-shell
+          image: docker.io/bitnamilegacy/os-shell:11-debian-11-r91
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 8.0.35
+    created: "2025-09-18T17:37:03.813804843+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MySQL is a fast, reliable, scalable, and easy to use open source
+      relational database system. Designed to handle mission-critical, heavy-load
+      production applications.
+    digest: 918cb9a15819dbede636f175afd215dfde9f037e9ed6554b667f17e3f0003b3e
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
+    keywords:
+    - mysql
+    - database
+    - sql
+    - cluster
+    - high availability
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: mysql
+    sources:
+    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/mysql-9.16.19.tgz
+    version: 9.16.19
+  - annotations:
+      category: Database
+      images: |
+        - name: mysql
+          image: docker.io/bitnami/mysql:8.0.35-debian-11-r0
+        - name: mysqld-exporter
+          image: docker.io/bitnami/mysqld-exporter:0.15.0-debian-11-r71
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r91
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 8.0.35
+    created: "2025-09-18T17:37:03.799169651+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MySQL is a fast, reliable, scalable, and easy to use open source
+      relational database system. Designed to handle mission-critical, heavy-load
+      production applications.
+    digest: b1d0d7715240f9c9dc8f70c085a9676db5f5001d5b8bedcc069c36fb11afd956
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
+    keywords:
+    - mysql
+    - database
+    - sql
+    - cluster
+    - high availability
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: mysql
+    sources:
+    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/mysql-9.16.18.tgz
+    version: 9.16.18
+  - annotations:
+      category: Database
+      images: |
+        - name: mysql
+          image: docker.io/bitnami/mysql:8.0.35-debian-11-r0
+        - name: mysqld-exporter
+          image: docker.io/bitnami/mysqld-exporter:0.15.0-debian-11-r71
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r91
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 8.0.35
+    created: "2025-09-18T17:37:03.779628742+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MySQL is a fast, reliable, scalable, and easy to use open source
+      relational database system. Designed to handle mission-critical, heavy-load
+      production applications.
+    digest: f40c115fef65241c9ee5b8caa5be5bdafb75ef8ebe16086fa159800cb841b970
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
+    keywords:
+    - mysql
+    - database
+    - sql
+    - cluster
+    - high availability
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: mysql
+    sources:
+    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/mysql-9.16.17.tgz
+    version: 9.16.17
+  - annotations:
+      category: Database
+      images: |
+        - name: mysql
+          image: docker.io/bitnami/mysql:8.0.35-debian-11-r0
+        - name: mysqld-exporter
+          image: docker.io/bitnami/mysqld-exporter:0.15.0-debian-11-r71
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r91
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 8.0.35
+    created: "2025-09-18T17:37:03.758667472+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MySQL is a fast, reliable, scalable, and easy to use open source
+      relational database system. Designed to handle mission-critical, heavy-load
+      production applications.
+    digest: b7333ec1d63d55481f8539c0449e14225c6f931a5cfbb0f24cd0b3bb1c180d95
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
+    keywords:
+    - mysql
+    - database
+    - sql
+    - cluster
+    - high availability
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: mysql
+    sources:
+    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/mysql-9.16.16.tgz
+    version: 9.16.16
+  - annotations:
+      category: Database
+      images: |
+        - name: mysql
+          image: docker.io/bitnami/mysql:8.0.35-debian-11-r0
+        - name: mysqld-exporter
+          image: docker.io/bitnami/mysqld-exporter:0.15.0-debian-11-r71
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r91
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 8.0.35
+    created: "2025-09-18T17:37:03.733872091+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MySQL is a fast, reliable, scalable, and easy to use open source
+      relational database system. Designed to handle mission-critical, heavy-load
+      production applications.
+    digest: c34b349efb50963910448452bcf5406340093514a3bcdebf5ee93f4e1a015f41
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
+    keywords:
+    - mysql
+    - database
+    - sql
+    - cluster
+    - high availability
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: mysql
+    sources:
+    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/mysql-9.16.15.tgz
+    version: 9.16.15
+  postgresql:
+  - annotations:
+      category: Database
+      images: |
+        - name: os-shell
+          image: docker.io/bitnamilegacy/os-shell:11-debian-11-r93
+        - name: postgres-exporter
+          image: docker.io/bitnamilegacy/postgres-exporter:0.15.0-debian-11-r5
+        - name: postgresql
+          image: docker.io/bitnamilegacy/postgresql:16.1.0-debian-11-r19
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 16.1.0
+    created: "2025-09-19T18:43:52.890003188+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: PostgreSQL (Postgres) is an open source object-relational database
+      known for reliability and data integrity. ACID-compliant, it supports foreign
+      keys, joins, views, triggers and stored procedures.
+    digest: 26c04f05aae92a3191b18f9e1efadaa85c040d41d9ad69aa024f31cb179aabc6
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-220x234.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: postgresql
+    sources:
+    - https://atmosly-builder.github.io/atmosly-postgresql-helm-chart/postgresql-13.3.0.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/postgresql-13.4.0.tgz
+    version: 13.4.0
+  - annotations:
+      category: Database
+      images: |
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r93
+        - name: postgres-exporter
+          image: docker.io/bitnami/postgres-exporter:0.15.0-debian-11-r5
+        - name: postgresql
+          image: docker.io/bitnami/postgresql:16.1.0-debian-11-r19
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 16.1.0
+    created: "2025-09-19T18:43:52.880803134+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: PostgreSQL (Postgres) is an open source object-relational database
+      known for reliability and data integrity. ACID-compliant, it supports foreign
+      keys, joins, views, triggers and stored procedures.
+    digest: e4d18b9c1af55aacb3208bc038d302f84b70079b438cbba79c6cb2302991db11
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-220x234.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: postgresql
+    sources:
+    - https://atmosly-builder.github.io/atmosly-postgresql-helm-chart/postgresql-13.3.0.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/postgresql-13.3.9.tgz
+    version: 13.3.9
+  - annotations:
+      category: Database
+      images: |
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r93
+        - name: postgres-exporter
+          image: docker.io/bitnami/postgres-exporter:0.15.0-debian-11-r5
+        - name: postgresql
+          image: docker.io/bitnami/postgresql:16.1.0-debian-11-r19
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 16.1.0
+    created: "2025-09-19T18:43:52.871328087+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: PostgreSQL (Postgres) is an open source object-relational database
+      known for reliability and data integrity. ACID-compliant, it supports foreign
+      keys, joins, views, triggers and stored procedures.
+    digest: de32be8b8ee7686c1326da528f73c2998757a0b75fc66965b1469d50529b8559
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-220x234.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: postgresql
+    sources:
+    - https://atmosly-builder.github.io/atmosly-postgresql-helm-chart/postgresql-13.3.0.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/postgresql-13.3.8.tgz
+    version: 13.3.8
+  - annotations:
+      category: Database
+      images: |
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r93
+        - name: postgres-exporter
+          image: docker.io/bitnami/postgres-exporter:0.15.0-debian-11-r5
+        - name: postgresql
+          image: docker.io/bitnami/postgresql:16.1.0-debian-11-r19
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 16.1.0
+    created: "2025-09-19T18:43:52.861961723+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: PostgreSQL (Postgres) is an open source object-relational database
+      known for reliability and data integrity. ACID-compliant, it supports foreign
+      keys, joins, views, triggers and stored procedures.
+    digest: 3e7b3657f4d35d842d27ba980f8fc99bbd065c6b7fee2c7f0b39bd9bef7001df
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-220x234.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: postgresql
+    sources:
+    - https://atmosly-builder.github.io/atmosly-postgresql-helm-chart/postgresql-13.3.0.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/postgresql-13.3.7.tgz
+    version: 13.3.7
+  - annotations:
+      category: Database
+      images: |
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r93
+        - name: postgres-exporter
+          image: docker.io/bitnami/postgres-exporter:0.15.0-debian-11-r5
+        - name: postgresql
+          image: docker.io/bitnami/postgresql:16.1.0-debian-11-r19
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 16.1.0
+    created: "2025-09-19T18:43:52.85186608+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: PostgreSQL (Postgres) is an open source object-relational database
+      known for reliability and data integrity. ACID-compliant, it supports foreign
+      keys, joins, views, triggers and stored procedures.
+    digest: ffcb0f9233dafb862f9c397a5f3df7a8f566f8cf676b9089527e79038387a26e
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-220x234.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: postgresql
+    sources:
+    - https://atmosly-builder.github.io/atmosly-postgresql-helm-chart/postgresql-13.3.0.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/postgresql-13.3.6.tgz
+    version: 13.3.6
+  - annotations:
+      category: Database
+      images: |
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r93
+        - name: postgres-exporter
+          image: docker.io/bitnami/postgres-exporter:0.15.0-debian-11-r5
+        - name: postgresql
+          image: docker.io/bitnami/postgresql:16.1.0-debian-11-r19
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 16.1.0
+    created: "2025-09-19T18:43:52.842581916+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: PostgreSQL (Postgres) is an open source object-relational database
+      known for reliability and data integrity. ACID-compliant, it supports foreign
+      keys, joins, views, triggers and stored procedures.
+    digest: 42c876b3744751feb3c6fea8093710f2ef7dceae6501edc668c6b5e79bb01298
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-220x234.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: postgresql
+    sources:
+    - https://atmosly-builder.github.io/atmosly-postgresql-helm-chart/postgresql-13.3.0.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/postgresql-13.3.5.tgz
+    version: 13.3.5
+  - annotations:
+      category: Database
+      images: |
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r93
+        - name: postgres-exporter
+          image: docker.io/bitnami/postgres-exporter:0.15.0-debian-11-r5
+        - name: postgresql
+          image: docker.io/bitnami/postgresql:16.1.0-debian-11-r19
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 16.1.0
+    created: "2025-09-19T18:43:52.832196757+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: PostgreSQL (Postgres) is an open source object-relational database
+      known for reliability and data integrity. ACID-compliant, it supports foreign
+      keys, joins, views, triggers and stored procedures.
+    digest: fe54a3446c28efa7ca31957464c9119fa42257b79e068c14c479558a10f79a22
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-220x234.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: postgresql
+    sources:
+    - https://atmosly-builder.github.io/atmosly-postgresql-helm-chart/postgresql-13.3.0.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/postgresql-13.3.4.tgz
+    version: 13.3.4
+  - annotations:
+      category: Database
+      images: |
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r93
+        - name: postgres-exporter
+          image: docker.io/bitnami/postgres-exporter:0.15.0-debian-11-r5
+        - name: postgresql
+          image: docker.io/bitnami/postgresql:16.1.0-debian-11-r19
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 16.1.0
+    created: "2025-09-19T18:43:52.815269262+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: PostgreSQL (Postgres) is an open source object-relational database
+      known for reliability and data integrity. ACID-compliant, it supports foreign
+      keys, joins, views, triggers and stored procedures.
+    digest: 25066f31366b8aaf273e162155777e2b1ce97a8870b89847607a1ba47df6964e
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-220x234.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: postgresql
+    sources:
+    - https://atmosly-builder.github.io/atmosly-postgresql-helm-chart/postgresql-13.3.0.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/postgresql-13.3.3.tgz
+    version: 13.3.3
+  - annotations:
+      category: Database
+      images: |
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r93
+        - name: postgres-exporter
+          image: docker.io/bitnami/postgres-exporter:0.15.0-debian-11-r5
+        - name: postgresql
+          image: docker.io/bitnami/postgresql:16.1.0-debian-11-r19
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 16.1.0
+    created: "2025-09-19T18:43:52.800762947+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: PostgreSQL (Postgres) is an open source object-relational database
+      known for reliability and data integrity. ACID-compliant, it supports foreign
+      keys, joins, views, triggers and stored procedures.
+    digest: 18bb892d1d2502ec2bc5cb102848f7c0a398988765d768ee90d3b0108dded113
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-220x234.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: postgresql
+    sources:
+    - https://atmosly-builder.github.io/atmosly-postgresql-helm-chart/postgresql-13.3.0.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/postgresql-13.3.2.tgz
+    version: 13.3.2
+  - annotations:
+      category: Database
+      images: |
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r93
+        - name: postgres-exporter
+          image: docker.io/bitnami/postgres-exporter:0.15.0-debian-11-r5
+        - name: postgresql
+          image: docker.io/bitnami/postgresql:16.1.0-debian-11-r19
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 16.1.0
+    created: "2025-09-19T18:43:52.720564259+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: PostgreSQL (Postgres) is an open source object-relational database
+      known for reliability and data integrity. ACID-compliant, it supports foreign
+      keys, joins, views, triggers and stored procedures.
+    digest: ba5ff0654f9daf4e18eb7c06950616dbe03d1e0ef178b4cd2957addf8d86e5d9
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-220x234.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: postgresql
+    sources:
+    - https://atmosly-builder.github.io/atmosly-postgresql-helm-chart/postgresql-13.3.0.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/postgresql-13.3.1.tgz
+    version: 13.3.1
+  - annotations:
+      category: Database
+      images: |
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r93
+        - name: postgres-exporter
+          image: docker.io/bitnami/postgres-exporter:0.15.0-debian-11-r5
+        - name: postgresql
+          image: docker.io/bitnami/postgresql:16.1.0-debian-11-r19
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 16.1.0
+    created: "2025-09-19T18:43:52.67569554+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: PostgreSQL (Postgres) is an open source object-relational database
+      known for reliability and data integrity. ACID-compliant, it supports foreign
+      keys, joins, views, triggers and stored procedures.
+    digest: c562c273a734a480f4977c54c626794f06d0efb9824ecbb9fa2d9c2e53364397
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-220x234.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: postgresql
+    sources:
+    - https://atmosly-builder.github.io/atmosly-postgresql-helm-chart/
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/postgresql-13.3.0.tgz
+    version: 13.3.0
+  redis:
+  - annotations:
+      category: Database
+      images: |
+        - name: os-shell
+          image: docker.io/bitnamilegacy/os-shell:11-debian-11-r96
+        - name: redis-exporter
+          image: docker.io/bitnamilegacy/redis-exporter:1.57.0-debian-11-r2
+        - name: redis-sentinel
+          image: docker.io/bitnamilegacy/redis-sentinel:7.2.4-debian-11-r6
+        - name: redis
+          image: docker.io/bitnamilegacy/redis:7.2.4-debian-11-r5
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 7.2.4
+    created: "2026-01-28T13:36:07.903413543Z"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Redis(R) is an open source, advanced key-value store. It is often
+      referred to as a data structure server since keys can contain strings, hashes,
+      lists, sets and sorted sets.
+    digest: e4e8748f535257c92af210896dcf1d951f35a4d4446b93ce3c8af059d778a66b
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/redis/img/redis-stack-220x234.png
+    keywords:
+    - redis
+    - keyvalue
+    - database
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: redis
+    sources:
+    - https://atmosly-builder.github.io/atmosly-redis-helm-chart/redis-18.12.1.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/redis-18.12.6.tgz
+    version: 18.12.6
+  - annotations:
+      category: Database
+      images: |
+        - name: os-shell
+          image: docker.io/bitnamilegacy/os-shell:11-debian-11-r96
+        - name: redis-exporter
+          image: docker.io/bitnamilegacy/redis-exporter:1.57.0-debian-11-r2
+        - name: redis-sentinel
+          image: docker.io/bitnamilegacy/redis-sentinel:7.2.4-debian-11-r6
+        - name: redis
+          image: docker.io/bitnamilegacy/redis:7.2.4-debian-11-r5
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 7.2.4
+    created: "2026-01-28T13:36:07.900488908Z"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Redis(R) is an open source, advanced key-value store. It is often
+      referred to as a data structure server since keys can contain strings, hashes,
+      lists, sets and sorted sets.
+    digest: 8e107e02a1d7445c72238d23a56549654f2ef13841d98946791c91eb72a61431
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/redis/img/redis-stack-220x234.png
+    keywords:
+    - redis
+    - keyvalue
+    - database
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: redis
+    sources:
+    - https://atmosly-builder.github.io/atmosly-redis-helm-chart/redis-18.12.1.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/redis-18.12.5.tgz
+    version: 18.12.5
+  - annotations:
+      category: Database
+      images: |
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r96
+        - name: redis-exporter
+          image: docker.io/bitnami/redis-exporter:1.57.0-debian-11-r2
+        - name: redis-sentinel
+          image: docker.io/bitnami/redis-sentinel:7.2.4-debian-11-r6
+        - name: redis
+          image: docker.io/bitnami/redis:7.2.4-debian-11-r5
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 7.2.4
+    created: "2026-01-28T13:36:07.896680469Z"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Redis(R) is an open source, advanced key-value store. It is often
+      referred to as a data structure server since keys can contain strings, hashes,
+      lists, sets and sorted sets.
+    digest: ac4badb2f2317904d3e45bda214cef7cd2349bf321f823fecce658c59fa902b3
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/redis/img/redis-stack-220x234.png
+    keywords:
+    - redis
+    - keyvalue
+    - database
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: redis
+    sources:
+    - https://atmosly-builder.github.io/atmosly-redis-helm-chart/redis-18.12.1.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/redis-18.12.4.tgz
+    version: 18.12.4
+  - annotations:
+      category: Database
+      images: |
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r96
+        - name: redis-exporter
+          image: docker.io/bitnami/redis-exporter:1.57.0-debian-11-r2
+        - name: redis-sentinel
+          image: docker.io/bitnami/redis-sentinel:7.2.4-debian-11-r6
+        - name: redis
+          image: docker.io/bitnami/redis:7.2.4-debian-11-r5
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 7.2.4
+    created: "2026-01-28T13:36:07.893706548Z"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Redis(R) is an open source, advanced key-value store. It is often
+      referred to as a data structure server since keys can contain strings, hashes,
+      lists, sets and sorted sets.
+    digest: b0f3003b721d3334d36d1100b683f131831680e328853a7cb7adcf09586be798
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/redis/img/redis-stack-220x234.png
+    keywords:
+    - redis
+    - keyvalue
+    - database
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: redis
+    sources:
+    - https://atmosly-builder.github.io/atmosly-redis-helm-chart/redis-18.12.1.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/redis-18.12.3.tgz
+    version: 18.12.3
+  - annotations:
+      category: Database
+      images: |
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r96
+        - name: redis-exporter
+          image: docker.io/bitnami/redis-exporter:1.57.0-debian-11-r2
+        - name: redis-sentinel
+          image: docker.io/bitnami/redis-sentinel:7.2.4-debian-11-r6
+        - name: redis
+          image: docker.io/bitnami/redis:7.2.4-debian-11-r5
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 7.2.4
+    created: "2026-01-28T13:36:07.889669617Z"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Redis(R) is an open source, advanced key-value store. It is often
+      referred to as a data structure server since keys can contain strings, hashes,
+      lists, sets and sorted sets.
+    digest: f542451d4affd243a8190628ae0777b3e28166127b59071f99ada2021b9fb0d3
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/redis/img/redis-stack-220x234.png
+    keywords:
+    - redis
+    - keyvalue
+    - database
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: redis
+    sources:
+    - https://atmosly-builder.github.io/atmosly-redis-helm-chart/redis-18.12.1.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/redis-18.12.2.tgz
+    version: 18.12.2
+  - annotations:
+      category: Database
+      images: |
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r96
+        - name: redis-exporter
+          image: docker.io/bitnami/redis-exporter:1.57.0-debian-11-r2
+        - name: redis-sentinel
+          image: docker.io/bitnami/redis-sentinel:7.2.4-debian-11-r6
+        - name: redis
+          image: docker.io/bitnami/redis:7.2.4-debian-11-r5
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 7.2.4
+    created: "2026-01-28T13:36:07.884459631Z"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Redis(R) is an open source, advanced key-value store. It is often
+      referred to as a data structure server since keys can contain strings, hashes,
+      lists, sets and sorted sets.
+    digest: 05385f73a4bff3c736f119259d258e01c08c0d697cf748bdd22652ee13dc9fec
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/redis/img/redis-stack-220x234.png
+    keywords:
+    - redis
+    - keyvalue
+    - database
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: redis
+    sources:
+    - https://github.com/bitnami/charts/tree/main/bitnami/redis
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/redis-18.12.1.tgz
+    version: 18.12.1
+generated: "2026-11-10T17:21:24.398903+05:30"
