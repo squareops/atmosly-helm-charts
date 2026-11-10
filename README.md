@@ -1,5 +1,8 @@
 # atmosly-helm-charts
 
+[![Chart checks](https://github.com/squareops/atmosly-helm-charts/actions/workflows/pr-checks.yaml/badge.svg)](https://github.com/squareops/atmosly-helm-charts/actions/workflows/pr-checks.yaml)
+[![Publish charts](https://github.com/squareops/atmosly-helm-charts/actions/workflows/publish.yaml/badge.svg)](https://github.com/squareops/atmosly-helm-charts/actions/workflows/publish.yaml)
+
 The Helm charts Atmosly uses to run databases on a customer's cluster (blueprint databases): MySQL, MongoDB, PostgreSQL and Redis. This repository is the single place for all four charts and the Helm repository they are published from.
 
 ## Chart address
