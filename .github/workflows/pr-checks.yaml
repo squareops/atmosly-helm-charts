@@ -3,12 +3,8 @@ name: Chart checks (pull request)
 on:
   pull_request:
     branches: [main]
-    paths:
-      - "charts/**"
-      - "ct.yaml"
-      - "lintconf.yaml"
-      - "scripts/**"
-      - ".github/workflows/**"
+    # No path filter on purpose: the check must report on every pull request so it can be a required check.
+    # Jobs that need a changed chart skip themselves when none changed.
 
 permissions:
   contents: read
