@@ -89,5 +89,9 @@ jobs:
 
       - uses: helm/kind-action@a1b0e391336a6ee6713a0583f8c6240d70863de3 # v1.12.0
 
+      - name: Label the kind node like an Atmosly add-on node
+        # The charts schedule their pods on nodes labelled Addons-Services=true (see affinity in values.yaml).
+        run: kubectl label nodes --all Addons-Services=true
+
       - name: ct install
         run: ct install --config ct.yaml
