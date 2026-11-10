@@ -33,4 +33,4 @@ maintainers:
 name: redis
 sources:
 - https://atmosly-builder.github.io/atmosly-redis-helm-chart/redis-18.12.1.tgz
-version: 18.12.6
+version: 18.12.7
