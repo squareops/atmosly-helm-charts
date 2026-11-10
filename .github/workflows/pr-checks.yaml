@@ -1,0 +1,97 @@
+name: Chart checks (pull request)
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "charts/**"
+      - "ct.yaml"
+      - "lintconf.yaml"
+      - "scripts/**"
+      - ".github/workflows/**"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint and template changed charts
+    runs-on: ubuntu-24.04
+    outputs:
+      changed: ${{ steps.list.outputs.changed }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+
+      - uses: azure/setup-helm@b9e51907a09c216f16ebe8536097933489208112 # v4.3.0
+        with:
+          version: v3.18.4
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.12"
+
+      - uses: helm/chart-testing-action@0d28d3144d3a25ea2cc349d6e59901c4ff469b3b # v2.7.0
+
+      - name: List changed charts
+        id: list
+        run: |
+          changed="$(ct list-changed --config ct.yaml)"
+          if [ -n "$changed" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Changed charts:"; echo "$changed"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No chart changed."
+          fi
+
+      - name: ct lint
+        if: steps.list.outputs.changed == 'true'
+        run: ct lint --config ct.yaml
+
+      - name: helm template
+        if: steps.list.outputs.changed == 'true'
+        run: |
+          for chart in $(ct list-changed --config ct.yaml); do
+            echo "::group::helm template $chart"
+            helm template check "$chart" > /dev/null
+            echo "::endgroup::"
+          done
+
+      - name: Check against published versions
+        # Fails when a changed chart keeps a version that is already on gh-pages.
+        run: |
+          git fetch --depth=1 origin gh-pages
+          git worktree add "$RUNNER_TEMP/pages" FETCH_HEAD --detach
+          scripts/publish.sh check "$RUNNER_TEMP/pages" "${{ github.event.pull_request.base.sha }}"
+
+  install:
+    name: Install changed charts on kind
+    needs: lint
+    if: needs.lint.outputs.changed == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+
+      - uses: azure/setup-helm@b9e51907a09c216f16ebe8536097933489208112 # v4.3.0
+        with:
+          version: v3.18.4
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.12"
+
+      - uses: helm/chart-testing-action@0d28d3144d3a25ea2cc349d6e59901c4ff469b3b # v2.7.0
+
+      - uses: helm/kind-action@a1b0e391336a6ee6713a0583f8c6240d70863de3 # v1.12.0
+
+      - name: ct install
+        run: ct install --config ct.yaml

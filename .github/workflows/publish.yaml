@@ -1,0 +1,52 @@
+name: Publish charts (push to main)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "charts/**"
+      - "scripts/**"
+      - ".github/workflows/publish.yaml"
+
+permissions:
+  contents: write
+
+# One publish at a time, so two merges never write index.yaml together.
+concurrency:
+  group: publish-charts
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Package new chart versions into gh-pages
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: gh-pages
+          path: pages
+          fetch-depth: 0
+
+      - uses: azure/setup-helm@b9e51907a09c216f16ebe8536097933489208112 # v4.3.0
+        with:
+          version: v3.18.4
+
+      - name: Package charts whose version is not published yet
+        run: scripts/publish.sh publish pages "${{ github.event.before }}"
+
+      - name: Commit and push gh-pages
+        working-directory: pages
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "gh-pages unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Publish chart versions from ${GITHUB_SHA::7}"
+          git push origin HEAD:gh-pages

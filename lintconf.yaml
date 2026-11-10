@@ -1,0 +1,15 @@
+# yamllint rules for Chart.yaml and values.yaml. These charts are Bitnami based:
+# long lines and comment style in values.yaml are accepted, syntax errors are not.
+extends: default
+rules:
+  line-length: disable
+  document-start: disable
+  comments: disable
+  comments-indentation: disable
+  indentation: disable
+  truthy: disable
+  empty-lines: disable
+  trailing-spaces: disable
+  new-line-at-end-of-file: disable
+  braces: disable
+  brackets: disable

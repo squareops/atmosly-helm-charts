@@ -1,0 +1,11 @@
+{{- if .Values.restore_job.enabled }}
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: sa-mongo-restore
+  {{- if .Values.restore_job.annotations.aws }}
+  annotations:
+    eks.amazonaws.com/role-arn: {{ toYaml .Values.restore_job.annotations.aws }}
+  {{- end }}
+{{- end }}

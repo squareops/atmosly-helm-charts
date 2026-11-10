@@ -1,0 +1,36 @@
+{{- if .Values.restore_job.enabled }}
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: restore-mongo
+spec:
+  template:
+    spec:
+      affinity:
+        {{- toYaml .Values.global.affinity | nindent 8 }}
+      serviceAccountName: sa-mongo-restore
+      containers:
+          - name: restore-mongodb
+            image: {{ .Values.restore_job.image.repository }}:{{ .Values.restore_job.image.tag }}
+            env:
+            - name: MONGO_URI
+              value: mongodb://{{ .Values.auth.rootUser }}:{{ .Values.auth.rootPassword }}@{{ .Release.Name }}.{{ .Release.Namespace }}.svc.cluster.local:27017
+            - name: MONGO_OPLOG
+              value: "false"
+            - name: AWS_DEFAULT_REGION
+              value: {{ .Values.restore_job.aws_default_region}}
+            - name: MONGO_BUCKET_RESTORE_URI
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-restore
+                  key: BUCKET_URI
+            - name: FILE_NAME_FULL
+              value: {{ .Values.restore_job.file_name | quote }}
+            - name: RESTORE_FROM
+              value: {{ .Values.restore_job.bucket_provider_type}}
+            resources:
+              {{- toYaml .Values.restore_job.resources | nindent 14 }}
+      restartPolicy: Never
+  backoffLimit: 4
+{{- end }}

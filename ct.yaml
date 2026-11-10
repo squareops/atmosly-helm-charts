@@ -1,0 +1,13 @@
+# chart-testing (ct) settings used by the pull request checks.
+remote: origin
+target-branch: main
+chart-dirs:
+  - charts
+# A changed chart must carry a higher version than on main (never edit a published version).
+check-version-increment: true
+# The Bitnami "common" library is vendored in charts/<name>/charts/common, so nothing is downloaded.
+skip-helm-dependencies: true
+# Chart.yaml in these charts has no GitHub maintainer handles to validate.
+validate-maintainers: false
+lint-conf: lintconf.yaml
+helm-extra-args: --timeout 600s

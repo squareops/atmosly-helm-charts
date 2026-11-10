@@ -1,0 +1,38 @@
+{{- if .Values.restore.enabled }}
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: restore
+spec:
+  template:
+    spec:
+      affinity: 
+        {{ .Values.global.affinity | toYaml | nindent 8 }}
+      serviceAccountName: sa-mysql-restore
+      containers:
+      - name: restore-mysqldb
+        image: {{ .Values.restore.image }}
+        imagePullPolicy: Always
+        env:
+        - name: MYSQL_HOST
+          value: {{ include "common.names.fullname" . }}-primary.{{ .Release.Namespace }}.svc.cluster.local
+        - name: MYSQL_USER
+          value: "root"
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ include "common.names.fullname" . }}
+              key: mysql-root-password
+        - name: MYSQL_NON_ROOT_USER
+          value: {{ .Values.auth.username }}
+        - name: MYSQL_BUCKET_RESTORE_URI
+          valueFrom:
+            secretKeyRef:
+              name: mysql-bucket-uri-restore
+              key: MYSQL_BUCKET_URI
+        resources: 
+          {{ .Values.restore.resources | toYaml | nindent 14 }}
+      restartPolicy: Never
+  backoffLimit: 4
+{{- end }}

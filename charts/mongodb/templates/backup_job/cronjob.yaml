@@ -1,0 +1,41 @@
+{{- if .Values.backup_job.enabled }}
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: backup-mongodb
+spec:
+  schedule: {{ .Values.backup_job.cron_for_full_backup |  quote }}
+  concurrencyPolicy: Forbid
+  suspend: false
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 1
+
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          affinity:
+            {{- toYaml .Values.global.affinity | nindent 12 }}
+          restartPolicy: OnFailure
+          serviceAccountName: sa-mongo-backup
+          containers:
+          - name: backup-mongodb
+            image: {{ .Values.backup_job.image.repository }}:{{ .Values.backup_job.image.tag }}
+            env:
+            - name: MONGODB_URI
+              value: mongodb://{{ .Values.auth.rootUser }}:{{ .Values.auth.rootPassword }}@{{ .Release.Name }}.{{ .Release.Namespace }}.svc.cluster.local:27017
+            - name: MONGO_OPLOG
+              value: "true"
+            - name: MONGO_BUCKET_URI
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-bucket-backup
+                  key: BUCKET_URI
+            - name: BUCKET_PROVIDER
+              value: {{ .Values.backup_job.bucket_provider_type }}
+            - name: AWS_DEFAULT_REGION
+              value: {{ .Values.backup_job.aws_default_region }}
+            resources: 
+              {{- toYaml .Values.backup_job.resources | nindent 14 }}
+{{- end }}

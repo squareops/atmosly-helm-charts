@@ -1,0 +1,46 @@
+{{- if .Values.backup_job.enabled }}
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: postgres-backup
+spec:
+  schedule: {{ .Values.backup_job.cron_for_full_backup |  quote }}
+  concurrencyPolicy: Forbid
+  suspend: false
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 1
+
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          affinity: 
+            {{- toYaml .Values.global.affinity | nindent 12 }}
+          restartPolicy: OnFailure
+          imagePullSecrets:
+          - name: regcred
+          serviceAccountName: sa-postgres-backup
+          containers:
+          - name: postgres-backup
+            image: {{ .Values.backup_job.image }}
+            imagePullPolicy: Always
+            env:
+            - name: POSTGRES_HOST
+              value: {{ .Release.Name }}-primary.{{ .Release.Namespace }}.svc.cluster.local
+            - name: POSTGRES_PORT
+              value: "5432"
+            - name: POSTGRES_USER
+              value: "postgres"
+            # - name: PGPASSWORD
+            #   value: {{ .Values.backup.database_password }}
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                    name: {{ .Release.Name }}
+                    key: postgres-password
+            - name: POSTGRES_BUCKET_URI
+              value: {{ .Values.backup_job.bucket_uri }}
+            resources: 
+              {{- toYaml .Values.backup_job.resources | nindent 14 }}
+{{- end }}
