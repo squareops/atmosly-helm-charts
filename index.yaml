@@ -45,6 +45,51 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 7.0.5
+    created: "2026-11-10T11:52:33.738907617Z"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MongoDB(R) is a relational open source NoSQL database. Easy to use,
+      it stores data in JSON-like documents. Automated scalability and high-performance.
+      Ideal for developing cloud native applications.
+    digest: 62c8d02dd9127792a1715016eef147494172c460cb156b4d82d34639b463b9ff
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
+    keywords:
+    - mongodb
+    - database
+    - nosql
+    - cluster
+    - replicaset
+    - replication
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: mongodb
+    sources:
+    - https://atmosly-builder.github.io/atmosly-mongo-helm-chart/mongodb-14.10.0.tgz
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/mongodb-14.10.9.tgz
+    version: 14.10.9
+  - annotations:
+      category: Database
+      images: |
+        - name: kubectl
+          image: docker.io/bitnamilegacy/kubectl:1.29.1-debian-11-r3
+        - name: mongodb-exporter
+          image: docker.io/bitnamilegacy/mongodb-exporter:0.40.0-debian-11-r6
+        - name: mongodb
+          image: docker.io/bitnamilegacy/mongodb:7.0.5-debian-11-r6
+        - name: nginx
+          image: docker.io/bitnamilegacy/nginx:1.25.3-debian-11-r7
+        - name: os-shell
+          image: docker.io/bitnamilegacy/os-shell:11-debian-11-r96
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 7.0.5
     created: "2025-09-18T17:18:36.879686785+05:30"
     dependencies:
     - name: common
@@ -435,6 +480,46 @@ entries:
     - https://squareops.github.io/atmosly-helm-charts/mongodb-14.10.0.tgz
     version: 14.10.0
   mysql:
+  - annotations:
+      category: Database
+      images: |
+        - name: mysql
+          image: docker.io/bitnamilegacy/mysql:8.0.35-debian-11-r0
+        - name: mysqld-exporter
+          image: docker.io/bitnamilegacy/mysqld-exporter:0.15.0-debian-11-r71
+        - name: os-shell
+          image: docker.io/bitnamilegacy/os-shell:11-debian-11-r91
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 8.0.35
+    created: "2026-11-10T11:52:33.741445422Z"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MySQL is a fast, reliable, scalable, and easy to use open source
+      relational database system. Designed to handle mission-critical, heavy-load
+      production applications.
+    digest: 12894becb2d5e807d95dc6cc5281342852402c88f9f562667fce92b8287ed16f
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
+    keywords:
+    - mysql
+    - database
+    - sql
+    - cluster
+    - high availability
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: mysql
+    sources:
+    - https://atmosly-builder.github.io/atmosly-mysql-helm-chart/
+    urls:
+    - https://squareops.github.io/atmosly-helm-charts/mysql-9.16.20.tgz
+    version: 9.16.20
   - annotations:
       category: Database
       images: |
@@ -1328,4 +1413,4 @@ entries:
     urls:
     - https://squareops.github.io/atmosly-helm-charts/redis-18.12.1.tgz
     version: 18.12.1
-generated: "2026-11-10T17:21:24.398903+05:30"
+generated: "2026-11-10T11:52:33.734786552Z"
